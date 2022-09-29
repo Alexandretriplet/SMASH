@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 29 sep. 2022 à 16:37
+-- Généré le : jeu. 29 sep. 2022 à 16:49
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.6
 
@@ -77,6 +77,17 @@ CREATE TABLE `smash` (
   `nom_smash` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `smash`
+--
+
+INSERT INTO `smash` (`id_smash`, `nom_smash`) VALUES
+(1, 'smash64'),
+(2, 'smash-melee'),
+(3, 'smash-brawl'),
+(4, 'smash-4'),
+(5, 'smash-ultimate');
+
 -- --------------------------------------------------------
 
 --
@@ -89,7 +100,8 @@ CREATE TABLE `user` (
   `nom` varchar(30) NOT NULL,
   `prenom` varchar(30) NOT NULL,
   `role` varchar(25) DEFAULT NULL,
-  `mdp` varchar(100) NOT NULL
+  `mdp` varchar(100) NOT NULL,
+  `email` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -152,7 +164,7 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT pour la table `smash`
 --
 ALTER TABLE `smash`
-  MODIFY `id_smash` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_smash` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `user`
