@@ -1,56 +1,54 @@
+<?php 
+    session_start();
+    require('actions/questions/showAllQuestionsAction.php');
+?>
 <!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>Codec</title>
-        <link rel="stylesheet" href="loginstyle.css">
-    </head>
-    <body>
-        <div id="container">            
-            <form action="verif.php" method="POST">
-                <h1>Connectez-vous</h1>
-                
-                <label><b>Nom d'utilisateur</b></label>
-                <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
+<html lang="en">
+<?php include 'includes/head.php'; ?>
+<body>
+    <?php include 'includes/navbar.php'; ?>
+    <br><br>
 
-                <label><b>Mot de passe</b></label>
-                <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+    <div class="container">
+    
+        <form method="GET">
 
-                <label><b>Email</b></label>
-                <input type="email" placeholder="Entrer votre email" name="email" required>
+            <div class="form-group row">
 
-                <input type="submit" id='submit' value="S'IDENTIFIER" >
-                <?php
-                if(isset($_GET['erreur'])){
-                    $err = $_GET['erreur'];
-                    if($err==1 || $err==2){
-                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-                    }
-                    if($err==3){
-                        echo "<p style='color:green'>Connectez-vous</p>";
-                    }
+                <div class="col-8">
+                    <input type="search" name="search" class="form-control">
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-success" type="submit">Rechercher</button>
+                </div>
 
-                }
-                if(isset($_GET['deco'])){
-                    $deco = $_GET['deco'];
-                    if($deco==1){
-                        session_start();
-                        $_SESSION['id'] = "";
-                        $_SESSION['username'] = "";
-                        $_SESSION = array();
-                        
-                        session_destroy(); 
-                        echo "<p style='color:green'>Vous êtes deconnecté</p>";
-                    }
-                }
-                if(isset($_GET['sup'])){
-                    echo "<p style='color:red'>Compte Supprimé</p>";
-                }
+            </div>
+        </form>
+
+        <br>
+
+        <?php 
+            while($question = $getAllQuestions->fetch()){
                 ?>
-                <p class="Inscriptiontext">Si vous n'avez pas de Compte</p>
-                <a class="s" href="inscription.php" >Incrivez-vous</a>
-                
-            </form>
-        </div>
-    </body>
+                <div class="card">
+                    <div class="card-header">
+                        <a href="article.php?id=<?= $question['id']; ?>">
+                            <?= $question['titre']; ?>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <?= $question['description']; ?>
+                    </div>
+                    <div class="card-footer">
+                        Publié par <a href="profile.php?id=<?= $question['id_auteur']; ?>"><?= $question['pseudo_auteur']; ?></a> le <?= $question['date_publication']; ?>
+                    </div>
+                </div>
+                <br>
+                <?php
+            }
+        ?>
+
+    </div>
+
+</body>
 </html>
