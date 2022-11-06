@@ -1,11 +1,11 @@
 <?php require('actions/users/loginAction.php'); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    
+    <?php include 'includes/navbar.php'; ?>    
     <br><br>
     <form class="container" method="POST">
 
@@ -19,7 +19,7 @@
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password" class="form-control" name="password">
         </div>
-        <button type="submit" class="btn btn-primary" name="validate">Se connecter</button>
+        <button type="submit" class="btn btn-primary" name="validate" style="background-color: #339bce">Se connecter</button>
         <br><br>
         <a href="signup.php"><p>Je n'ai pas de compte, je m'inscris</p></a>
     </form>

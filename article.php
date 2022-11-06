@@ -5,18 +5,22 @@
     require('actions/questions/showAllAnswersOfQuestionAction.php');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 
-<body>
+<body style="background-image:url(assets/SPU.png); background-size: cover;">
     
     <?php include 'includes/navbar.php'; ?>
     <br><br>
 
-    <div class="container">
+    <a href="#" class="remonter">
+        <img src="assets/top.png" class="icone">
+    </a>
+
+    <div class="container" style="background-color: white; padding-bottom: 50px; padding-top: 10px ;border-radius: 30px;">
 
 
         <?php 
@@ -26,21 +30,21 @@
             if(isset($question_publication_date)){
                 ?>
                 <section class="show-content">
-                    <h3><?= $question_title; ?></h3>
+                    <h3 style="font: italic small-caps bold 16px/2 cursive;"><?= $question_title; ?></h3>
                     <hr>
-                    <p><?= $question_content; ?></p>
+                    <p  ><?= $question_content; ?></p>
                     <hr>
-                    <small><?= '<a href="profile.php?id='.$question_id_author.'">'.$question_pseudo_author . '</a> ' . $question_publication_date; ?></small>
+                    <small>Par <?= '<a href="profile.php?id='.$question_id_author.'">'.$question_pseudo_author . '</a> ' . $question_publication_date; ?></small>
                 </section>
                 <br>
                 <section class="show-answers">
 
                     <form class="form-group" method="POST">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Réponse :</label>
+                            <label for="exampleInputEmail1" class="form-label" style="font: italic small-caps bold 16px/2 cursive;">Réponse :</label>
                             <textarea name="answer" class="form-control"></textarea>
                             <br>
-                            <button class="btn btn-primary" type="submit" name="validate">Répondre</button>
+                            <button class="btn btn-primary" type="submit" name="validate" style="background-color: #339bce;">Répondre</button>
                         </div>
                     </form>
 

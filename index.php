@@ -3,19 +3,24 @@
     require('actions/questions/showAllQuestionsAction.php');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 
 <head>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 
-
-<body>
-    <?php include 'includes/navbar.php'; ?>
+<header>
+<?php include 'includes/navbar.php'; ?>
+</header>
+<body style="background-image:url(assets/SPU.png); background-size: cover;">
     <br><br>
 
-    <div class="container">
+    <a href="#" class="remonter">
+        <img src="assets/top.png" class="icone">
+    </a>
+
+    <div class="container" style="background-color: white; padding-bottom: 50px; padding-top: 10px ;border-radius: 30px;">
     
         <form method="GET">
 
@@ -25,7 +30,7 @@
                     <input type="search" name="search" class="form-control">
                 </div>
                 <div class="col-4">
-                    <button class="btn btn-success" type="submit">Rechercher</button>
+                    <button class="btn btn-primary" type="submit" style="background-color: #339bce; margin-top: 10px;">Rechercher</button>
                 </div>
 
             </div>
@@ -37,12 +42,12 @@
             while($question = $getAllQuestions->fetch()){
                 ?>
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="font: italic small-caps bold 16px/2 cursive;">
                         <a href="article.php?id=<?= $question['id']; ?>">
                             <?= $question['titre']; ?>
                         </a>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" style="font: italic small-caps bold 16px/2 cursive;">
                         <?= $question['description']; ?>
                     </div>
                     <div class="card-footer">

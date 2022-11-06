@@ -1,39 +1,33 @@
-<!DOCTYPE html>
+<nav class="navbar">
+  <a href="#" class="logo">SC</a>
+  <div class="nav-links">
+    <ul>
+        <a href="index.php" style="font: italic small-caps bold 16px/2 cursive; color: red;">Les articles</a>
 
-<head>
-  <link rel="stylesheet" href="../assets/style.css">
-</head>
+        <a href="publish-question.php" style="font: italic small-caps bold 16px/2 cursive; color: #bf5e2e ;">Publier un article</a>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">SC</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="index.php">Les articles</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="publish-question.php">Publier un article</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="my-questions.php">Mes articles</a>
-        </li>
+        <a href="my-questions.php" style="font: italic small-caps bold 16px/2 cursive; color: #bf5e2e ;">Mes articles</a>
+
         <?php 
           if(isset($_SESSION['auth'])){
             ?>
-            <li class="nav-item">
-              <a class="nav-link" href="profile.php?id=<?= $_SESSION['id']; ?>">Mon profil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="actions/users/logoutAction.php">Déconnexion</a>
-            </li>
+            <a href="profile.php?id=<?= $_SESSION['id']; ?>" style="font: italic small-caps bold 16px/2 cursive; color: #2ebfbf;">Mon profil</a>
+
+            <a href="actions/users/logoutAction.php" style="font: italic small-caps bold 16px/2 cursive; color: #2ebfbf;">Déconnexion</a>
+
             <?php
-          }
-        ?>
-      </ul>
-    </div>
+            }
+            ?>
+    </ul>
   </div>
+  <img src="assets/menu-btn.png" alt="menu" class="menu">
+
+  <script>
+        const menu = document.querySelector(".menu")
+        const navLinks = document.querySelector(".nav-links")
+ 
+        menu.addEventListener('click',()=>{
+        navLinks.classList.toggle('mobile-menu')
+        })
+</script>
 </nav>
