@@ -1,10 +1,11 @@
 <?php require('actions/users/signupAction.php'); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+    <?php include 'includes/navbar.php'; ?>   
     <br><br>
     <form class="container" method="POST">
 
@@ -26,7 +27,7 @@
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password" class="form-control" name="password">
         </div>
-        <button type="submit" class="btn btn-primary" name="validate">S'inscrire</button>
+        <button type="submit" class="btn btn-primary" name="validate" style="background-color: #339bce">S'inscrire</button>
         <br><br>
         <a href="login.php"><p>J'ai déjà un compte, je me connecte</p></a>
    </form>

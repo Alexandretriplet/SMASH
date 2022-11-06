@@ -24,7 +24,7 @@
 }
 
 .bg-dark{
-    background-color: #212529!important;
+    background-color: #004a94!important;
 }
 .navbar {
     position: relative;
@@ -358,7 +358,6 @@ div {
 
 [type=search] {
     outline-offset: -2px;
-    -webkit-appearance: textfield;
 }
 button, input, optgroup, select, textarea {
     margin: 0;
@@ -778,4 +777,19 @@ button {
 
 /* publish question */ 
 
-
+.remonter {
+    height: 60px;
+    width: 60px;
+    background: rgb(40, 20, 220);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+}
+.icone {
+    width: 50px;
+}
