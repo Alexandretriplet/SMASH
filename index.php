@@ -10,10 +10,9 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 
-<header>
-<?php include 'includes/navbar.php'; ?>
-</header>
+
 <body style="background-image:url(assets/SPU.png); background-size: cover;">
+    <?php include 'includes/navbar.php'; ?>
     <br><br>
 
     <a href="#" class="remonter">
